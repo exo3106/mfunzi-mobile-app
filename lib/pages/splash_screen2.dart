@@ -72,7 +72,7 @@ class SpashPageState2 extends State<UserSplash> with SingleTickerProviderStateMi
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image.asset(
-                'assets/icon/logo.png',
+                'assets/icon/favicon/android-chrome-192x192.png',
                 width: animation.value * 200,
                 height: animation.value * 400,
               ),

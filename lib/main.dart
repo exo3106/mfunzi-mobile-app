@@ -36,20 +36,19 @@ class MyApp extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'MFUNZI App',
       debugShowCheckedModeBanner: false,
-        home:HomeScreen()
-      // home:  FutureBuilder(
-      //   future: AuthMethods().getCurrentUser(),
-      //   builder: (context, AsyncSnapshot<dynamic> snapshot) {
-      //     if (snapshot.hasData) {
-      //       return UserSplash(user: snapshot.data);
-      //     }else{
-      //       return SplashPage();
-      //     }
-      //   },
-      // ),
+        home: FutureBuilder(
+        future: AuthMethods().getCurrentUser(),
+        builder: (context, AsyncSnapshot<dynamic> snapshot) {
+          if (snapshot.hasData) {
+            return UserSplash(user: snapshot.data);
+          }else{
+            return SplashPage();
+          }
+        },
+      ),
     );
   }
 }

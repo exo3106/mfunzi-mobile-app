@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mfunzi/pages/home/comonents/MFVideoPlayer.dart';
 import 'package:responsive_grid/responsive_grid.dart';
@@ -14,6 +15,11 @@ class MFFeatures extends StatefulWidget {
 }
 
 class _MFFeaturesState extends State<MFFeatures> {
+  void _handleCampus(){
+    if (kDebugMode) {
+      print("Container Clicked");
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return _buildGridLayout();
@@ -65,57 +71,64 @@ class _MFFeaturesState extends State<MFFeatures> {
               lg: 12,
               child:Padding(
                 padding: const EdgeInsets.all(5),
-                child:  Container(
-                  height: 100,
-                  alignment: const Alignment(0, 0),
-                  color: CustomColors.firebaseOrange,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(padding:const  EdgeInsets.only(right: 15),
-                       child: Image.asset('assets/icon/icons/ic_Home.png',width: 40,height: 40,color: CustomColors.firebaseBackground,),
-                      ),
-                      Text('MZUMBE CAMPUS', style: TextStyle(fontSize: 20,
-                          color: CustomColors.firebaseBackground,
-                          fontWeight: FontWeight.bold)),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            ResponsiveGridCol(
-              xs: 6,
-              md: 3,
-              child:Padding(
-                  padding: const EdgeInsets.all(5),
-                  child:   Container(
-                height: 100,
-                alignment: const Alignment(0, 0),
-                color: Colors.green,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(padding:const  EdgeInsets.only(bottom: 5),
-                        child: Image.asset('assets/icon/icons/ic_Home.png',width: 20,height: 20,color: CustomColors.firebaseBackground,),
-                      ),
-                      Text('ACADEMIC LIFE', style: TextStyle(fontSize: 15,
-                          color: CustomColors.firebaseBackground,
-                          fontWeight: FontWeight.bold)),
-                    ],
-                  ),
-                )
-              ),
-            ),
-            ResponsiveGridCol(
-              xs: 6,
-              md: 3,
-              child:Padding(
-                  padding: const EdgeInsets.all(5),
-                  child:   Container(
+                child:
+                InkWell(
+                  onTap: () => _handleCampus(),
+                  child:  Container(
                     height: 100,
                     alignment: const Alignment(0, 0),
-                    color: Colors.green,
+                    decoration: BoxDecoration(
+                        color: CustomColors.firebaseOrange,
+                        borderRadius: const BorderRadius.all(Radius.circular(10))),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(padding:const  EdgeInsets.only(right: 15),
+                          child: Image.asset('assets/icon/icons/ic_Home.png',width: 40,height: 40,color: CustomColors.firebaseBackground,),
+                        ),
+                        Text('MZUMBE CAMPUS', style: TextStyle(fontSize: 20,
+                            color: CustomColors.firebaseBackground,
+                            fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                  ),
+                )
+
+              ),
+            ),
+            ResponsiveGridCol(
+              xs: 6,
+              md: 3,
+              child:
+              Card(
+                child: Column(
+                  children: <Widget>[
+                    Text("Academic Life"),
+                    Container(
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15.0),
+                          child: Image.asset('assets/icon/icons/ic_academic.png')),
+                    ),
+
+                  ],
+                ),
+
+
+                margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+
+              )
+            ),
+            ResponsiveGridCol(
+              xs: 6,
+              md: 3,
+              child:Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.green,
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    height: 100,
+                    alignment: const Alignment(0, 0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -136,10 +149,9 @@ class _MFFeaturesState extends State<MFFeatures> {
               child:Padding(
                 padding: const EdgeInsets.all(5),
                 child:  Container(
-                  height: 194,
+                  height: 180,
                   alignment: const Alignment(0, 0),
-                  color: Colors.purple,
-                  child: VideoPlayer(),
+                  child: const VideoPlayer(),
                 ),
               ),
             ),

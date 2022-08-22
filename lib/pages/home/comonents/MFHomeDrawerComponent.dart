@@ -48,14 +48,13 @@ class _MFHomeDrawerComponentState extends State<MFHomeDrawerComponent> {
                             mainAxisSize: MainAxisSize.min,
                             children:  <Widget>[
                               Text(_email, style: TextStyle(fontSize: 12)),
-                              Text('malnur@gmail.com', style: TextStyle(fontSize: 12)),
+                              Text(_email.replaceAll(_email, "@gmail.com"), style: TextStyle(fontSize: 12)),
                             ]
                       ),
                       IconButton(
                         icon: Image.asset('assets/icon/icons/ic_CloseSquare.png', height: 16, width: 16, fit: BoxFit.cover, color: CustomColors.firebaseNavy),
                         onPressed: () {
                           //finish(context);
-
                         },
                       ),
                     ],

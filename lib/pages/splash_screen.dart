@@ -69,7 +69,7 @@ class SplashPageState extends State<SplashPage> with SingleTickerProviderStateMi
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image.asset(
-                'assets/icon/logo.png',
+                'assets/icon/favicon/favicon-16x16.png',
                 width: animation.value * 250,
                 height: animation.value * 450,
               ),
