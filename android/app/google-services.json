@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "331461582634",
+    "project_id": "mfunzi-app",
+    "storage_bucket": "mfunzi-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331461582634:android:588cadd7663ef306dbc853",
+        "android_client_info": {
+          "package_name": "com.multimedia.mfunzi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "331461582634-m442mubhqon6ditj278q3jnm8m6q8i9k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaib8CNfpUa7q7ko9uTd4DKBAVvAzAeeI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "331461582634-m442mubhqon6ditj278q3jnm8m6q8i9k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
